@@ -1,0 +1,145 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 222 47% 11%; /* #111827 - Darker Navy/Charcoal */
+    --foreground: 0 0% 98%; /* #fafafa - White/Light Gray */
+
+    --card: 222 47% 16%; /* Slightly lighter than background for card: #1F2937 */
+    --card-foreground: 0 0% 98%; /* #fafafa */
+
+    --popover: 222 47% 11%; /* #111827 */
+    --popover-foreground: 0 0% 98%; /* #fafafa */
+
+    --primary: 217 91% 60%; /* #3B82F6 - Blue Accent */
+    --primary-foreground: 0 0% 98%; /* #fafafa */
+
+    --secondary: 222 47% 20%; /* Slightly lighter than card for secondary elements: #2A374A */
+    --secondary-foreground: 0 0% 98%; /* #fafafa */
+
+    --muted: 222 47% 25%; /* Lighter muted tone: #374151 */
+    --muted-foreground: 215 20% 65%; /* #8F96A3 */
+
+    --accent: 217 91% 60%; /* #3B82F6 - Blue Accent (Same as primary) */
+    --accent-foreground: 0 0% 98%; /* #fafafa - Text on Blue Accent */
+
+    --destructive: 0 63% 31%; /* #b91c1c */
+    --destructive-foreground: 0 0% 98%; /* #fafafa */
+
+    --border: 222 47% 25%; /* #374151 - Same as muted for a subtle border */
+    --input: 222 47% 20%; /* #2A374A - Same as secondary for input backgrounds */
+    --ring: 217 91% 60%; /* #3B82F6 - Blue Ring (Same as primary/accent) */
+
+    --chart-1: 217 91% 60%; /* Primary Blue */
+    --chart-2: 217 91% 60%; /* Blue Accent (Same as primary/accent) */
+    --chart-3: 217 91% 75%; /* Lighter Primary Blue */
+    --chart-4: 200 80% 70%; /* Distinct Lighter Blue */
+    --chart-5: 215 20% 65%; /* Muted Gray */
+    --radius: 0.5rem;
+
+    /* Sidebar specific colors - ensure they match the overall dark theme */
+    --sidebar-background: 222 47% 11%; /* Same as main background */
+    --sidebar-foreground: 0 0% 98%; /* Same as main foreground */
+    --sidebar-primary: 217 91% 60%; /* Blue Accent for sidebar primary elements */
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 222 47% 20%; /* Secondary color for sidebar accents */
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 222 47% 25%; /* Muted color for sidebar borders */
+    --sidebar-ring: 217 91% 60%; /* Blue Ring for focus states */
+  }
+
+  .dark {
+    --background: 222 47% 11%; /* #111827 - Darker Navy/Charcoal */
+    --foreground: 0 0% 98%; /* #fafafa - White/Light Gray */
+
+    --card: 222 47% 16%; /* Slightly lighter than background for card: #1F2937 */
+    --card-foreground: 0 0% 98%; /* #fafafa */
+
+    --popover: 222 47% 11%; /* #111827 */
+    --popover-foreground: 0 0% 98%; /* #fafafa */
+
+    --primary: 217 91% 60%; /* #3B82F6 - Blue Accent */
+    --primary-foreground: 0 0% 98%; /* #fafafa */
+
+    --secondary: 222 47% 20%; /* Slightly lighter than card for secondary elements: #2A374A */
+    --secondary-foreground: 0 0% 98%; /* #fafafa */
+
+    --muted: 222 47% 25%; /* Lighter muted tone: #374151 */
+    --muted-foreground: 215 20% 65%; /* #8F96A3 */
+
+    --accent: 217 91% 60%; /* #3B82F6 - Blue Accent (Same as primary) */
+    --accent-foreground: 0 0% 98%; /* #fafafa - Text on Blue Accent */
+
+    --destructive: 0 63% 31%; /* #b91c1c */
+    --destructive-foreground: 0 0% 98%; /* #fafafa */
+
+    --border: 222 47% 25%; /* #374151 - Same as muted for a subtle border */
+    --input: 222 47% 20%; /* #2A374A - Same as secondary for input backgrounds */
+    --ring: 217 91% 60%; /* #3B82F6 - Blue Ring (Same as primary/accent) */
+
+    --chart-1: 217 91% 60%; /* Primary Blue */
+    --chart-2: 217 91% 60%; /* Blue Accent (Same as primary/accent) */
+    --chart-3: 217 91% 75%; /* Lighter Primary Blue */
+    --chart-4: 200 80% 70%; /* Distinct Lighter Blue */
+    --chart-5: 215 20% 65%; /* Muted Gray */
+
+    /* Sidebar specific colors - ensure they match the overall dark theme */
+    --sidebar-background: 222 47% 11%; /* Same as main background */
+    --sidebar-foreground: 0 0% 98%; /* Same as main foreground */
+    --sidebar-primary: 217 91% 60%; /* Blue Accent for sidebar primary elements */
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 222 47% 20%; /* Secondary color for sidebar accents */
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 222 47% 25%; /* Muted color for sidebar borders */
+    --sidebar-ring: 217 91% 60%; /* Blue Ring for focus states */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Testimonial auto-scroll styles */
+.testimonial-scroll-container {
+  display: flex;
+  overflow: hidden; /* Ensure content is clipped if not scrolling */
+  width: 100%;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.testimonial-scroll-content {
+  display: flex;
+  flex-shrink: 0;
+  /* Animation is now applied conditionally via .marquee-active */
+}
+
+.testimonial-scroll-content.marquee-active {
+  animation: marquee 60s linear infinite; /* Adjusted duration for moderate speed */
+}
+
+.testimonial-scroll-content.marquee-active:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    /* Scroll by the width of the original set of items (half of total if duplicated) */
+    transform: translateX(-50%);
+  }
+}
