@@ -14,6 +14,45 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Users } from 'lucide-react';
 import { TestimonialsSection } from '@/components/testimonials-section'; 
 
+export const metadata = {
+  title: 'Free VITEEE Rank Analysis Tool | VITEERanks',
+  description:
+    'Get your VITEEE rank analysis instantly and for free. Predict your admission chances at VIT campuses including VIT Vellore, Chennai, Bhopal, and AP. Explore placement stats, AI-based college prediction, and more.',
+  keywords: [
+    'VITEEE',
+    'VITEEE 2025',
+    'VITEEE rank analysis',
+    'VITEEE college predictor',
+    'VITEEE rank predictor',
+    'VITEEE free tool',
+    'VIT admission',
+    'VITEEE AI analysis',
+    'VITEEE placements',
+    'VIT campus comparison',
+    'VITEEE vs JEE',
+    'VITEEE expected rank',
+    'VITEEE score vs rank',
+    'VIT counselling 2025',
+    'VITEEE seat predictor',
+    'VIT branch selection',
+    'VITEEE cutoff 2024',
+    'VITEEE category rank',
+    'VIT vellore placement stats',
+    'VITEEE admission chances',
+  ],
+  other: {
+    'google-site-verification': '1un__YAfOUDSv7-dtHBNXq1sbPUzZUMqTRd2PHwZZ_c', 
+  },
+  metadataBase: new URL('https://viteeeranks.vercel.app'),
+  openGraph: {
+    title: 'VITEEE Rank Predictor & Admission Analysis Tool',
+    description:
+      'Use our free and accurate VITEEE rank predictor to estimate your rank and admission chances. Includes AI-powered tools, campus-wise analysis, and real student feedback.',
+    url: 'https://viteeeranks.vercel.app',
+    siteName: 'VITEERanks',
+    type: 'website',
+  },
+};
 
 export default function Home() {
   return (
