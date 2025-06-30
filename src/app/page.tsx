@@ -63,7 +63,6 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
             <PredictionCounter />
             <FeedbackCounter />
-            <StudentDataCounter /> {/* This card now contains a link/button */}
             <Link href="/community" className="col-span-1">
               <Card className="shadow-md transition-shadow hover:shadow-lg bg-secondary/60 backdrop-blur-sm border border-border/40 h-full flex flex-col justify-between cursor-pointer">
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
